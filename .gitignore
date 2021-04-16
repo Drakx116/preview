@@ -1,0 +1,12 @@
+###> global ###
+.idea/
+.vscode/
+
+###< global ###
+
+###> symfony/framework-bundle ###
+/.env
+/public/bundles/
+/var/
+/vendor/
+###< symfony/framework-bundle ###
