@@ -2,8 +2,19 @@
 
 {% block title %} Preview {% endblock %}
 
+{% block stylesheets %}
+    <link rel="stylesheet" href="assets/css/main.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Karantina&family=PT+Sans&display=swap" rel="stylesheet">
+{% endblock %}
+
 {% block body %}
     <div class="container">
-        <h1>Preview</h1>
+        <img src="{{ product.picture }}" alt="{{ product.name }}">
+        <article class="product">
+            <h1> {{ product.name }}</h1>
+
+            <p>{{ product.description }}</p>
+        </article>
     </div>
 {% endblock %}
