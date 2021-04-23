@@ -3,6 +3,8 @@
 namespace App\Entity;
 
 use App\Repository\ProductRepository;
+use DateTime;
+use DateTimeInterface;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
@@ -31,6 +33,11 @@ class Product
      * @ORM\Column(type="string", length=255)
      */
     private $picture;
+
+    /**
+     * @ORM\Column(type="datetime", nullable=true)
+     */
+    private $date;
 
     public function getId(): ?int
     {
@@ -69,6 +76,18 @@ class Product
     public function setPicture(string $picture): self
     {
         $this->picture = $picture;
+
+        return $this;
+    }
+
+    public function getDate(): ?DateTimeInterface
+    {
+        return $this->date;
+    }
+
+    public function setDate(DateTimeInterface $date): self
+    {
+        $this->date = $date;
 
         return $this;
     }
