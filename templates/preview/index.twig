@@ -16,7 +16,20 @@
 
             <p>{{ product.description }}</p>
 
-            <a href=""> Précommander </a>
+            <p class="countdown" id="countdown" data-time="{{ product.date|date }}">
+                <span>Encore <span id="days"> </span> Jours,</span>
+                <span><span id="hours"> </span> Heures,</span>
+                <span><span id="minutes"> </span> Minutes et </span>
+                <span><span id="seconds"> </span> Secondes !</span>
+            </p>
+
+            <div class="link-container">
+                <a href=""> Précommander </a>
+            </div>
         </article>
     </div>
+{% endblock %}
+
+{% block javascripts %}
+    <script src="assets/js/countdown.js"></script>
 {% endblock %}
