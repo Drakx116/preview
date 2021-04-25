@@ -84,4 +84,14 @@ class NewsletterController extends AbstractController
 
         return $this->render('newsletter/completed.twig', [ 'email' => $email ]);
     }
+
+    /**
+     * @Route("newsletter/unsubscribe/{hash}", name="app_newsletter_unsubscribe")
+     */
+    public function unsubscribe(string $hash): Response
+    {
+        // TODO : Handle unsubscription
+
+        return $this->render('newsletter/unsubscribe.twig');
+    }
 }

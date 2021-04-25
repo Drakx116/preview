@@ -57,7 +57,7 @@
             <p><b> L'équipe du site. </b></p>
             <br>
             <hr>
-            <a href=""> Se désabonner </a>
+            <a href="{{ absolute_url(path('app_newsletter_unsubscribe', { 'hash': hash })) }}"> Se désabonner </a>
         </div>
     </body>
 </html>
