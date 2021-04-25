@@ -43,9 +43,8 @@ class Mailer
     {
         return $this->swiftMailer->send((new Email())
             ->setSubject('Preview Newsletter - Welcome')
-            ->setFrom('sendmail@preview.lan')
             ->setTo($user->getEmail())
-            ->setBody($this->twigEngine->render('emails/registration.twig'))
+            ->setBody($this->twigEngine->render('emails/registration.twig', [ 'hash' => $user->getHash() ]))
             ->setContentType('text/html')
         );
     }

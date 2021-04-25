@@ -54,6 +54,7 @@ class NewsletterController extends AbstractController
         if ($form->isSubmitted() && $form->isValid()) {
             $newUser = $form->getData();
             $newUser->setActive(true);
+            $newUser->setHash(str_replace('.', 0, uniqid('', true)));
             $created = $this->newsletterUserManager->save($user);
 
             if ($created) {
