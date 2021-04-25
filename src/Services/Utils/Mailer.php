@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Services;
+namespace App\Services\Utils;
 
 use App\Entity\NewsletterUser;
 use Swift_Mailer as SwiftMailer;
