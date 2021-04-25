@@ -20,10 +20,10 @@ class NewsletterType extends AbstractType
         $builder
             ->add('email', EmailType::class, [
                 'required' => true,
-                'label' => 'Adresse Email'
+                'label' => 'Email address'
             ])
             ->add('submit', SubmitType::class, [
-                'label' => 'S\'inscrire'
+                'label' => 'Validate'
             ]);
     }
 

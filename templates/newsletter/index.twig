@@ -7,9 +7,16 @@
 {% endblock %}
 
 {% block body %}
-    <h1> Subscribe to the Newsletter </h1>
+    <div class="form-container">
+        <h1> Subscribe to the Newsletter </h1>
 
-    <div class="container">
-        {{ form(form) }}
+        {{ form_start(form) }}
+            <b>*{{ form_label(form.email) }} </b>
+            {{ form_widget(form.email) }}
+            {% if form_errors(form.email) %}
+                {{ form_errors(form.email) }}
+            {% endif %}
+            <br>
+        {{ form_end(form) }}
     </div>
 {% endblock %}
