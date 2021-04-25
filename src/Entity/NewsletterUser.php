@@ -29,6 +29,11 @@ class NewsletterUser
      */
     private $isActive;
 
+    /**
+     * @ORM\Column(type="string", name="hash", nullable=true)
+     */
+    private $hash;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -55,6 +60,17 @@ class NewsletterUser
     {
         $this->isActive = $isActive;
 
+        return $this;
+    }
+
+    public function getHash(): ?string
+    {
+        return $this->hash;
+    }
+
+    public function setHash(?string $hash): self
+    {
+        $this->hash = $hash;
         return $this;
     }
 }
