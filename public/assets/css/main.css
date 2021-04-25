@@ -52,11 +52,12 @@ html, body {
     border: 2px solid white;
     color: white;
     text-decoration: none;
+    font-family: 'PT Sans', sans-serif;
 }
 
 .link-container > a:hover {
-    color: #F2F2F2;
-    border-color: #F2F2F2;
+    color: #D5D5D5;
+    border-color: #D5D5D5;
 }
 
 
