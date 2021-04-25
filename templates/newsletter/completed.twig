@@ -1,0 +1,16 @@
+{% extends 'base.html.twig' %}
+
+{% block title %} Preview - Newsletter Registration Completed {% endblock %}
+
+{% block stylesheets %}
+    <link rel="stylesheet" href="assets/css/main.css">
+{% endblock %}
+
+{% block body %}
+    <h1> Registration completed </h1>
+    <p>
+        You are now part of the Newsletter. <br>
+        An email has been sent to : <u style="color: blue">{{ email }}</u>.
+    </p>
+    <a href="{{ path('app_preview') }}"> Home </a>
+{% endblock %}

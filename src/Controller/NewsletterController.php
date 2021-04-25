@@ -59,10 +59,28 @@ class NewsletterController extends AbstractController
             if ($created) {
                 $this->mailer->sendNewsletterRegistrationEmail($user);
             }
+
+            return $this->redirectToRoute('app_newsletter_registration_completed', [ 'request' => $request ], 307);
         }
 
         return $this->render('newsletter/index.twig', [
             'form' => $form->createView()
         ]);
+    }
+
+    /**
+     * @Route("/newsletter/complete", name="app_newsletter_registration_completed")
+     */
+    public function registrationCompleted(Request $request)
+    {
+        if (!$newsletter = $request->request->get('newsletter')) {
+            return $this->redirectToRoute('app_preview');
+        }
+
+        if (!$email = $newsletter['email'] ?? null) {
+            return $this->redirectToRoute('app_preview');
+        }
+
+        return $this->render('newsletter/completed.twig', [ 'email' => $email ]);
     }
 }
