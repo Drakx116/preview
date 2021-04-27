@@ -16,6 +16,7 @@ class Mailer
      * @var SwiftMailer
      */
     private $swiftMailer;
+
     /**
      * @var Environment
      */
@@ -50,5 +51,17 @@ class Mailer
 //        );
 
         return mail($user->getEmail(), 'Preview Newsletter - Welcome', $this->twigEngine->render('emails/registration.twig', [ 'hash' => $user->getHash() ]), [ 'Content-Type' => 'text/html' ]);
+    }
+
+    /**
+     * @param NewsletterUser $user
+     * @return int
+     * @throws LoaderError
+     * @throws RuntimeError
+     * @throws SyntaxError
+     */
+    public function sendDailyNewsletter(NewsletterUser $user): int
+    {
+        return mail($user->getEmail(), 'Preview Newsletter', $this->twigEngine->render('emails/newsletter.twig', [ 'hash' => $user->getHash() ]), [ 'Content-Type' => 'text/html' ]);
     }
 }

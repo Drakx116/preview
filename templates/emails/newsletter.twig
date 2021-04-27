@@ -1,0 +1,63 @@
+<html lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <style>
+        body {
+            width: 100%;
+            margin: 0;
+            padding: 0;
+            background-color: #F2F2F2;
+        }
+
+        header {
+            width: calc(60% - 4em);
+            margin-left: 20%;
+            padding: 2em;
+            background-color: black;
+            text-align: center;
+        }
+
+        header > h1 {
+            margin: 0;
+            padding: 0;
+            font-size: 2.6em;
+            font-family: "Elephant", serif;
+            color: white;
+        }
+
+        .container {
+            width: calc(60% - 4em);
+            margin-left: 20%;
+            padding: 2em;
+            font-family: Ebrima, sans-serif;
+        }
+
+        .container > h2 {
+            font-size: 2em;
+        }
+
+        .container > p {
+            font-size: 1.2em;
+        }
+    </style>
+    <title> Daily Newsletter </title>
+</head>
+<body>
+<header>
+    <h1> Preview - Newsletter </h1>
+</header>
+<div class="container">
+    <h2> Aujourd'hui dans l'actualité !</h2>
+    <p> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Atqui iste locus est, Piso, tibi etiam atque etiam confirmandus, inquam; Nec vero hoc oratione solum, sed multo magis vita et factis et moribus comprobavit. Stoici restant, ei quidem non unam aliquam aut alteram rem a nobis, sed totam ad se nostram philosophiam transtulerunt; Age sane, inquam. Quod ea non occurrentia fingunt, vincunt Aristonem; Duo Reges: constructio interrete. Portenta haec esse dicit, neque ea ratione ullo modo posse vivi; Ut nemo dubitet, eorum omnia officia quo spectare, quid sequi, quid fugere debeant? Aderamus nos quidem adolescentes, sed multi amplissimi viri, quorum nemo censuit plus Fadiae dandum, quam posset ad eam lege Voconia pervenire. Cognitio autem haec est una nostri, ut vim corporis animique norimus sequamurque eam vitam, quae rebus iis ipsis perfruatur. </p>
+    <p> Respondent extrema primis, media utrisque, omnia omnibus. Huic ego, si negaret quicquam interesse ad beate vivendum quali uteretur victu, concederem, laudarem etiam; Tantum dico, magis fuisse vestrum agere Epicuri diem natalem, quam illius testamento cavere ut ageretur. Id enim volumus, id contendimus, ut officii fructus sit ipsum officium. -delector enim, quamquam te non possum, ut ais, corrumpere, delector, inquam, et familia vestra et nomine. Ut ad minora veniam, mathematici, poëtae, musici, medici denique ex hac tamquam omnium artificum officina profecti sunt. Quamquam ego non quaero, quid tibi a me probatum sit, sed huic Ciceroni nostro, quem discipulum cupio a te abducere. At tu eadem ista dic in iudicio aut, si coronam times, dic in senatu. Cum enim summum bonum in voluptate ponat, negat infinito tempore aetatis voluptatem fieri maiorem quam finito atque modico. Is ita vivebat, ut nulla tam exquisita posset inveniri voluptas, qua non abundaret. </p>
+    <p> Numquam hoc ita defendit Epicurus neque Metrodorus aut quisquam eorum, qui aut saperet aliquid aut ista didicisset. Tu enim ista lenius, hic Stoicorum more nos vexat. Si est nihil nisi corpus, summa erunt illa: valitudo, vacuitas doloris, pulchritudo, cetera. Quos qui tollunt et nihil posse percipi dicunt, ii remotis sensibus ne id ipsum quidem expedire possunt, quod disserunt. Sed est forma eius disciplinae, sicut fere ceterarum, triplex: una pars est naturae, disserendi altera, vivendi tertia. Quamquam haec quidem praeposita recte et reiecta dicere licebit. </p>
+    <p> À très vite pour plus de contenu ! </p>
+    <p><b> L'équipe du site. </b></p>
+    <br>
+    <hr>
+    <a href="{{ absolute_url(path('app_newsletter_unsubscribe', { 'hash': hash })) }}"> Se désabonner </a>
+</div>
+</body>
+</html>
