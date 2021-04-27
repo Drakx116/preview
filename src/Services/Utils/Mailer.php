@@ -41,11 +41,14 @@ class Mailer
      */
     public function sendNewsletterRegistrationEmail(NewsletterUser $user): int
     {
-        return $this->swiftMailer->send((new Email())
-            ->setSubject('Preview Newsletter - Welcome')
-            ->setTo($user->getEmail())
-            ->setBody($this->twigEngine->render('emails/registration.twig', [ 'hash' => $user->getHash() ]))
-            ->setContentType('text/html')
-        );
+        // DEBUG - The email is sent but not received --> SMTP error ?
+//        return $this->swiftMailer->send((new Email())
+//            ->setSubject('Preview Newsletter - Welcome')
+//            ->setTo($user->getEmail())
+//            ->setBody($this->twigEngine->render('emails/registration.twig', [ 'hash' => $user->getHash() ]))
+//            ->setContentType('text/html')
+//        );
+
+        return mail($user->getEmail(), 'Preview Newsletter - Welcome', $this->twigEngine->render('emails/registration.twig', [ 'hash' => $user->getHash() ]), [ 'Content-Type' => 'text/html' ]);
     }
 }
