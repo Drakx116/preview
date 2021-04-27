@@ -22,7 +22,7 @@ php bin/console d:f:l (doctrine:fixtures:load)
 
 Par défaut, SwiftMailer était installé et configuré pour l'envoi des mails. Ayant des soucis de configuration avec mon SMTP Gmail, c'est la méthode mail() de PHP qui s'occupe d'envoyer les mails pour un POC fonctionnel.
 
-## II - Cas utilisation
+## II - Cas d'utilisation
 
 Une fois le projet installé et configuré, la page d'accueil présente un aperçu d'un produit ainsi qu'un lien redirigeant vers une page contenant le formulaire d'inscription à la Newsletter.
 
