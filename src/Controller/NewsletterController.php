@@ -6,6 +6,7 @@ use App\Entity\NewsletterUser;
 use App\Form\NewsletterType;
 use App\Services\Utils\Mailer;
 use App\Services\Managers\NewsletterUserManager;
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\ParamConverter;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
@@ -14,6 +15,10 @@ use Twig\Error\LoaderError;
 use Twig\Error\RuntimeError;
 use Twig\Error\SyntaxError;
 
+/**
+ * Class NewsletterController
+ * @package App\Controller
+ */
 class NewsletterController extends AbstractController
 {
     /**
@@ -87,10 +92,15 @@ class NewsletterController extends AbstractController
 
     /**
      * @Route("newsletter/unsubscribe/{hash}", name="app_newsletter_unsubscribe")
+     * @ParamConverter("newsletter_user_hash")
      */
-    public function unsubscribe(string $hash): Response
+    public function unsubscribe(?NewsletterUser $user): Response
     {
-        // TODO : Handle unsubscription
+        if (!$user) {
+            return $this->redirectToRoute('app_preview');
+        }
+
+        $this->newsletterUserManager->delete($user);
 
         return $this->render('newsletter/unsubscribe.twig');
     }
