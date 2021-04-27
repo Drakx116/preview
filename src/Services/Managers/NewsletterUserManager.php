@@ -36,4 +36,19 @@ class NewsletterUserManager
             return false;
         }
     }
+
+    /**
+     * @param NewsletterUser $user
+     * @return bool
+     */
+    public function delete(NewsletterUser $user): bool
+    {
+        try {
+            $this->entityManager->remove($user);
+            $this->entityManager->flush();
+            return true;
+        } catch (Exception $e) {
+            return false;
+        }
+    }
 }
